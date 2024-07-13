@@ -1,4 +1,3 @@
-
 import { FC } from 'react';
 import { ImageModalProps } from './ImageModalProps';
 import Modal from 'react-modal';

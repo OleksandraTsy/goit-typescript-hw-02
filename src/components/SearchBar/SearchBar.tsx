@@ -31,7 +31,9 @@ export const SearchBar: FC<SearchBarProps> = ({ onSubmit }) => {
         onSubmit={handleSubmit}
       >
         <Form className={css.form}>
-          <button type='submit' className={css.btn}><IoSearchOutline size={24} /></button>
+          <button type='submit' className={css.btn}>
+            <IoSearchOutline size={24} />
+          </button>
           <Field
             className={css.input}
             autoComplete='off'
