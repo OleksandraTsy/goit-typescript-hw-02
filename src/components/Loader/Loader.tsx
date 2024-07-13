@@ -1,8 +1,9 @@
 
 import css from "./Loader.module.css";
-import {InfinitySpin} from 'react-loader-spinner'
+import { InfinitySpin } from 'react-loader-spinner'
+import { FC } from 'react';
 
-const Loader = () => {
+export const Loader: FC = () => {
     return (
         <div className={css.loader}>
         <InfinitySpin
@@ -14,5 +15,3 @@ const Loader = () => {
           </div>    
     );
 };
-
-export default Loader;

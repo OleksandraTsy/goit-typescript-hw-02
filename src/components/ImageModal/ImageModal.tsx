@@ -1,5 +1,7 @@
 
-import Modal from "react-modal";
+import { FC } from 'react';
+import { ImageModalProps } from './ImageModalProps';
+import Modal from 'react-modal';
 import css from "./ImageModal.module.css";
 
 const customStyles = {
@@ -18,26 +20,30 @@ const customStyles = {
 
 Modal.setAppElement("#root");
 
-export default function ImageModal({
+export const ImageModal: FC<ImageModalProps> = ({
   isOpen,
   isClose,
   imageUrl,
   imageAlt,
   imageAuthor,
-}) {
+}) => {
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={isClose}
       style={customStyles}
-      contentLabel="Image Modal"
+      contentLabel='Image Modal'
       closeTimeoutMS={400}
     >
-      <img className={css.img} src={imageUrl} alt={imageAlt} />
+      <img
+        className={css.img}
+        src={imageUrl}
+        alt={imageAlt}
+      />
       <div className={css.box}>
         <p className={css.text}>{imageAlt}</p>
         <p className={css.text}>Author: {imageAuthor}</p>
       </div>
     </Modal>
   );
-}
+};
