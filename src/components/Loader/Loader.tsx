@@ -9,7 +9,7 @@ export const Loader: FC = () => {
         visible={true}
         height='100'
         width='100'
-        color='#7a1f50'
+        color='#026049'
         radius='9'
         ariaLabel='three-dots-loading'
         wrapperClass={css.loader}
