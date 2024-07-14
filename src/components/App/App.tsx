@@ -9,6 +9,12 @@ import { getImages } from "../../services/api-service";
 import { Image } from '../../types';
 import css from "./App.module.css";
 
+
+interface ApiResponse {
+  results: Image[];
+  total_pages: number;
+}
+
 export default function App() {
   const [images, setImages] = useState<Image[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -26,7 +32,7 @@ export default function App() {
       setIsError(false);
       setIsLoading(true);
       try {
-        const { results, total_pages } = await getImages(searchQuery, page);
+        const { results, total_pages }: ApiResponse = await getImages(searchQuery, page);
         setImages((prevState) => [...prevState, ...results]);
         setShowBtn(total_pages !== page);
       } catch {
